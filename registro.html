@@ -1,0 +1,306 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>MediFacil</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="src/css/magnific-popup.css">
+    <link rel="stylesheet" href="src/css/font-awesome.min.css">
+    <link rel="stylesheet" href="src/css/themify-icons.css">
+    <link rel="stylesheet" href="src/css/nice-select.css">
+    <link rel="stylesheet" href="src/css/flaticon.css">
+    <link rel="stylesheet" href="src/css/gijgo.css">
+    <link rel="stylesheet" href="src/css/animate.css">
+    <link rel="stylesheet" href="src/css/slicknav.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- <link rel="stylesheet" href="src/css/responsive.css"> -->
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo-img">
+                                <a href="index.html">
+                                    <h1 class="titulo">Medifacil</h1>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="menu_wrap d-none d-lg-block">
+                                <div class="menu_wrap_inner d-flex align-items-center justify-content-end">
+                                    <div class="main-menu">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="index.html">Inicio</a></li>
+                                                <li><a href="about.html">Acerca de</a></li>
+                                                
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div class="book_room">
+                                        <div class="book_btn">
+                                            <a class="popup-with-form" href="#test-form">Inicia Sesion</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+    <form id="test-form2" class="">
+      <br>
+      <br>
+      <br>
+      <br>
+        <div style="text-align: center; margin-left: 30%;" class="popup_box ">
+            <div class="popup_inner">
+                <h3>
+                    <span>Medifacil</span>
+                    Registro
+               
+                </h3>
+                <form action="#">
+                    <h4>¿Sos un medico?</h4> 
+                    <div class="row">
+                        
+                        <div style="margin-left: 10%;" class="switch-wrap d-flex ">
+                            
+                            <p>No&nbsp; </p>
+                            <div  class="primary-switch">
+                                
+                                <input type="checkbox"  id="primary-switch">
+                                <label for="primary-switch"></label>
+                            </div>
+                            <p>&nbsp; Si </p>
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="text" id="REGnombre" value=""  placeholder="Nombre completo">
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="date" id="REGfecha" value=""  placeholder="fecha de nacimiento">
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="number" id="REGaltura" value="" placeholder="Altura">
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="number" id="REGpeso" value="" placeholder="Peso">
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="text" id="REGusername" value="" placeholder="Nombre de usuario">
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="password" id="REGcontrasena" value="" placeholder="contraseña">
+                        </div>
+                        
+                        <div class="col-xl-12">
+                            <a onClick="registra()" class="genric-btn primary">REGISTRARME</a>
+                        </div><br><br>
+                        <script>
+                            function registra(){
+                                
+                                var medico = 0; 
+                                
+                                if(document.getElementById("primary-switch").checked == true){
+                                    medico=1;
+                                }
+                                else{
+                                     medico = 0; 
+                                }
+                                
+                                
+                                var nombre = document.getElementById("REGnombre").value;
+                                var fecha = document.getElementById("REGfecha").value; 
+                                var altura = document.getElementById("REGaltura").value; 
+                                var peso = document.getElementById("REGpeso").value;  
+                                var username = document.getElementById("REGusername").value; 
+                                var contrasena = document.getElementById("REGcontrasena").value; 
+
+                                if(nombre=="" ||fecha=="" || altura=="" || peso=="" || username=="" || contrasena==""){
+                                    
+                                    Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error :c',
+                                    text: 'Por favor llene todos los datos',
+                                    
+                                    })
+
+                                }
+                                else{
+                                    Swal.fire(
+                                                    'Registro exitoso',
+                                                    'proceda a iniciar sesiom',
+                                                    'success'
+                                                    )
+                                    localStorage.setItem("nombre",JSON.stringify(nombre));
+                                    localStorage.setItem("fecha",JSON.stringify(fecha));
+                                    localStorage.setItem("altura",JSON.stringify(altura));
+                                    localStorage.setItem("peso",JSON.stringify(peso));
+                                    localStorage.setItem("username",JSON.stringify(username));
+                                    localStorage.setItem("pass",JSON.stringify(contrasena));
+                                    localStorage.setItem("medico",JSON.stringify(medico));
+                                    localStorage.setItem("dato",JSON.stringify(0));
+                                    localStorage.setItem("log",JSON.stringify(0));
+                                  }
+                                  window.location.href = "#test-form";
+                            }
+                            function ingreso(){
+                        
+                                var usernameI = document.getElementById("username").value; 
+                                var contrasenaI = document.getElementById("pass").value; 
+
+                                if(usernameI=="" || contrasenaI==""){
+                                    
+                                    Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error :c',
+                                    text: 'Por favor llene todos los datos',
+                                    
+                                    })
+
+                                }
+                                else{
+                                    var us = JSON.parse(localStorage.getItem("username"));
+                                    var pa = JSON.parse(localStorage.getItem("pass"));
+                                    var medic = JSON.parse(localStorage.getItem("medico"));
+                                    var dato = JSON.parse(localStorage.getItem("dato"));
+                                    
+                                    if(usernameI==us && contrasenaI==pa){
+                                        Swal.fire(
+                                                    'Bienvenido',
+                                                    '',
+                                                    'success'
+                                                    )
+                                                    localStorage.setItem("log",JSON.stringify(1));
+                                                    window.location.href = "inicio.html";
+                                  }
+                                  else{
+                                    Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error :c',
+                                    text: 'No se reconcen la credenciales de usuario',
+                                    
+                                    })
+                                  }
+                                  
+                               }
+                                    
+                            }
+                        </script>
+                       
+                    </div>
+                </form>
+            </div>
+        </div>
+   
+    </form>
+
+    <footer class="footer">
+        <div class="footer_top">
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="row">
+                    <div class="bordered_1px "></div>
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            <p> GRUPO 198 - EDEXOR 2020 Resolvamospues hackaton</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- link that opens popup -->
+
+    <!-- form itself end-->
+    <form id="test-form" class="white-popup-block mfp-hide">
+        <div class="popup_box ">
+            <div class="popup_inner">
+                <h3>
+                    <span>Medifacil</span>
+                    Inicia Sesion 
+               
+                </h3>
+                <form action="#">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <input type="text" id="username" placeholder="tu nombre de usuario ">
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="password" id="pass" placeholder="contraseña">
+                        </div>
+                        
+                        <div class="col-xl-12">
+                            <button type="submit" onclick="ingreso()" class="boxed-btn3">INGRESAR</button>
+                        </div><br><br>
+                        
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </form>
+
+    
+    <!-- form itself end -->
+
+    <!-- JS here -->
+    <script src="src/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="src/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="src/js/popper.min.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
+    <script src="src/js/owl.carousel.min.js"></script>
+    <script src="src/js/isotope.pkgd.min.js"></script>
+    <script src="src/js/ajax-form.js"></script>
+    <script src="src/js/waypoints.min.js"></script>
+    <script src="src/js/jquery.counterup.min.js"></script>
+    <script src="src/js/imagesloaded.pkgd.min.js"></script>
+    <script src="src/js/scrollIt.js"></script>
+    <script src="src/js/jquery.scrollUp.min.js"></script>
+    <script src="src/js/wow.min.js"></script>
+    <script src="src/js/nice-select.min.js"></script>
+    <script src="src/js/jquery.slicknav.min.js"></script>
+    <script src="src/js/jquery.magnific-popup.min.js"></script>
+    <script src="src/js/plugins.js"></script>
+    <script src="src/js/gijgo.min.js"></script>
+    <!--contact js-->
+    <script src="src/js/contact.js"></script>
+    <script src="src/js/jquery.ajaxchimp.min.js"></script>
+    <script src="src/js/jquery.form.js"></script>
+    <script src="src/js/jquery.validate.min.js"></script>
+    <script src="src/js/mail-script.js"></script>
+
+    <script src="src/js/main.js"></script>
+   
+</body>
+
+</html>
